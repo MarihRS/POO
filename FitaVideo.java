@@ -1,6 +1,6 @@
 //CLASSE
 public class FitaVideo {
-    
+
 //ATRIBUTOS
     private String titulo;
     private double precoPorDia; 
@@ -25,8 +25,8 @@ public class FitaVideo {
     }
 
     public void imprimir(int numeroDeDiasAlugada){
-        System.out.printf("Título: %s" \n, titulo); //%n = adiciona uma nova linha
-        System.out.printf("Preço do aluguel por dia: R$ %.2f" \n, precoPorDia);
-        System.out.printf("Valor do aluguel para %d dias: R$ %.2" \n , numeroDeDiasAlugada, getValorAluguel(numeroDeDiasAlugada));
+        System.out.printf("Título: %s", titulo); //%n = adiciona uma nova linha
+        System.out.printf("Preço do aluguel por dia: R$ %.2f", precoPorDia);
+        System.out.printf("Valor do aluguel para %d dias: R$ %.2", numeroDeDiasAlugada, getValorAluguel(numeroDeDiasAlugada));
     }
 }
