@@ -1,5 +1,5 @@
-    //CLASSE
-public class Circulo {
+//CLASSE
+   public class Circulo {
     
     //ATRIBUTOS
         private int raio;
@@ -10,15 +10,15 @@ public class Circulo {
         }
     
     //MÉTODO
-        public int calcularArea(){
+        public double calcularArea(){
             return 3.141516 * raio * raio;
         }
     
-        public int calcularPerimetro(){
+        public double calcularPerimetro(){
             return 2 * 3.141516 * raio;
         }
     
         public void imprimir(){
-            System.ou.printf("Raio: %d, Área: %d, Perímetro: %d \n", raio, calcularArea(), calcularPerimetro());
+            System.out.printf("Raio: %d, Área: %d, Perímetro: %d \n", raio, calcularArea(), calcularPerimetro());
         }
-    }
+}
