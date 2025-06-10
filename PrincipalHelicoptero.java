@@ -58,7 +58,7 @@ public class PrincipalHelicoptero {
     h2.removePessoa();
 
 //Exibindo estado do h1 e h2
-    Systemout.println(h1);
+    System.out.println(h1);
     System.out.println(h2);
     
     }
