@@ -11,7 +11,7 @@ public class PrincipalAlunoTurma {
         double nota1;
         double nota2;
 
-        for(int i = 0; i < 1; i++) {
+        for(int i = 0; i < 3; i++) {
             System.out.println("Digite o nome do aluno: ");
             nome = teclado.nextLine();
 
@@ -32,6 +32,8 @@ public class PrincipalAlunoTurma {
         System.out.println("Digite a matrícula do aluno que você procura: ");
         matricula = teclado.nextInt();
         t.buscarPorMatricula(matricula);
+
+        teclado.close();
 
     }
 }
