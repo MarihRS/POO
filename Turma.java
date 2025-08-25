@@ -1,5 +1,3 @@
-import java.util.scanner;
-
 //CLASSE
 public class Turma {
 
@@ -15,8 +13,8 @@ public class Turma {
 
 //MÉTODOS
 //MET 1 - ADD ALUNO
-    public boolean add(Aluno a){
-        if (qtde == this.alunos.length) return falso;
+    public boolean adicionar(Aluno a){
+        if (qtde == this.alunos.length) return false;
         this.alunos[this.qtde++] = a;
         return true;
     }
@@ -24,7 +22,7 @@ public class Turma {
 //MET 2 - listar alunos
     public void listarAlunos() {
         for (int i = 0; i < qtde; i++) {
-            System.out.println(Aluno[i]);
+            System.out.println(alunos[i]);
         }
     }
 
@@ -32,10 +30,10 @@ public class Turma {
     public Aluno buscarPorMatricula(int matricula) {
         if (this.qtde == 0) return null;
         for (Aluno a : this.alunos) {
-            if (a.buscarPorMatricula() == matricula) { 
+            if (a.getMatricula() == matricula) { 
             return a;
         }
     }
         return null;
-}
+    }
 }
