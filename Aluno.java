@@ -33,7 +33,7 @@ public class Aluno {
 
     //get matricula p/ usar no método buscarPorMatricula
     public int getMatricula() {
-        return matricula;
+        return matricula; //permite acessar a matrícula do aluno de fora da classe (já q tava private)
     }
     
     //Método 3 - imprime na tela nome, matrícula, notas, média e situação.
@@ -46,4 +46,5 @@ public class Aluno {
                 "Média: " + calcularMedia() +
                 "Situação" + situacao());
         }
+
     }
