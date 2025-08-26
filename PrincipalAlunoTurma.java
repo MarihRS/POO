@@ -5,7 +5,7 @@ public class PrincipalAlunoTurma {
         Scanner teclado = new Scanner(System.in);
 
 //Criando uma turma
-        Turma t = new Turma(1);
+        Turma t = new Turma(3);
         String nome;
         int matricula;
         double nota1;
