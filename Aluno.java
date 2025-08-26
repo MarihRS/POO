@@ -31,20 +31,26 @@ public class Aluno {
             }
         }
 
-    //get matricula p/ usar no método buscarPorMatricula
+    //get matricula p/ usar no método buscarPorMatricula e nome
     public int getMatricula() {
-        return matricula; //permite acessar a matrícula do aluno de fora da classe (já q tava private)
+        return matricula;
     }
-    
+
+    public String getNome() {
+        return nome;
+    }
+
     //Método 3 - imprime na tela nome, matrícula, notas, média e situação.
-        public void exibirInfo() {
-            System.out.println(
-                "Nome: " + nome +
+        public String toString() {
+            return "Nome: " + nome + 
                 " | Matrícula: " + matricula +
                 " | Nota1: " + nota1 +
                 " | Nota2: " + nota2 +
                 " | Média: " + calcularMedia() +
-                " | Situação" + situacao());
+                " | Situação" + situacao();
         }
-
+        
+        public void exibirInfo(){
+            System.out.println(toString());
+        }
     }
