@@ -7,7 +7,7 @@ public class Aluno {
         private double nota1;
         private double nota2;
     
-    //CONSTRUTOR
+    //CONSTRUTOR - adiciona novos objetos a classe
         public Aluno(String nome, int matricula, double nota1, double nota2){
             this.nome = nome;
             this.matricula = matricula;
@@ -18,20 +18,20 @@ public class Aluno {
     //MÉTODOS
     //Método 1- calcular média
         public double calcularMedia() {
-            return (nota1 + nota2)/2;
+            return (nota1 + nota2)/2; //retorna as 2 notas  do aluno e divide p/ 2 pra dar a média
         }
     
     //Método 2 -retorna "Aprovado" se média ≥ 7.0, caso contrário "Reprovado".
         public String situacao(){
-            if (calcularMedia() >= 7.0){
-                return "Aprovado";
+            if (calcularMedia() >= 7.0){ //se a média for maior ou igual a 7.0, retorna aprovado
+                return "Aprovado!";
             }
             else {
-                return "Reprovado";
+                return "Reprovado!"; //se n, retorna reprovado
             }
         }
 
-    //get matricula p/ usar no método buscarPorMatricula e nome
+    //get matricula p/ usar no método buscarPorMatricula e nome (retorna a matricula e o nome)
     public int getMatricula() {
         return matricula;
     }
@@ -41,7 +41,7 @@ public class Aluno {
     }
 
     //Método 3 - imprime na tela nome, matrícula, notas, média e situação.
-        public String toString() {
+        public String toString() { //representa o obj como uma String, mostrando todas as infos do aluno
             return "Nome: " + nome + 
                 " | Matrícula: " + matricula +
                 " | Nota1: " + nota1 +
@@ -50,7 +50,8 @@ public class Aluno {
                 " | Situação: " + situacao();
         }
 
-        public void exibirInfo(){
-            System.out.println(toString());
+        public void exibirInfo(){ //imprime na tela as info do aluno
+            System.out.println(toString()); //chama o toString() internamente para pegar a representção completa do obj
         }
     }
+
