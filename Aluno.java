@@ -40,11 +40,11 @@ public class Aluno {
         public void exibirInfo() {
             System.out.println(
                 "Nome: " + nome +
-                "Matrícula: " + matricula +
-                "Nota1: " + nota1 +
-                "Nota2: " + nota2 +
-                "Média: " + calcularMedia() +
-                "Situação" + situacao());
+                " | Matrícula: " + matricula +
+                " | Nota1: " + nota1 +
+                " | Nota2: " + nota2 +
+                " | Média: " + calcularMedia() +
+                " | Situação" + situacao());
         }
 
     }
