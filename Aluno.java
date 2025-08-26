@@ -1,56 +1,38 @@
 //CLASSE
-public class Aluno {
+public class Turma {
 
-    //ATRIBUTOS
-        private String nome;
-        private int matricula;
-        private double nota1;
-        private double nota2;
-    
-    //CONSTRUTOR
-        public Aluno(String nome, int matricula, double nota1, double nota2){
-            this.nome = nome;
-            this.matricula = matricula;
-            this.nota1 = nota1;
-            this.nota2 = nota2;
-        }
-    
-    //MÉTODOS
-    //Método 1- calcular média
-        public double calcularMedia() {
-            return (nota1 + nota2)/2;
-        }
-    
-    //Método 2 -retorna "Aprovado" se média ≥ 7.0, caso contrário "Reprovado".
-        public String situacao(){
-            if (calcularMedia() >= 7.0){
-                return "Aprovado";
-            }
-            else {
-                return "Reprovado";
-            }
-        }
+//ATRIBUTOS
+    private Aluno[] alunos; //vetor de alunos
+    private int qtde; //núm. de alunos cadastrados
 
-    //get matricula p/ usar no método buscarPorMatricula e nome
-    public int getMatricula() {
-        return matricula;
+//CONSTRUTOR - cria uma turma com capacidade máx. igual ao valor passado no parâmetro
+    public Turma(int qtde) {
+        this.qtde = 0; //começa com 0 pq n adicionamos alunos
+        this.alunos = new Aluno[qtde];
     }
 
-    public String getNome() {
-        return nome;
+//MÉTODOS
+//MET 1 - ADD ALUNO
+    public boolean adicionar(Aluno a){
+        if (qtde == this.alunos.length) return false; //se a turma tiver cheia, retorna false
+        alunos[qtde++] = a;
+        return true; //caso contrário, add o aluno na posição qtde e dps incrementa qtde
     }
 
-    //Método 3 - imprime na tela nome, matrícula, notas, média e situação.
-        public String toString() {
-            return "Nome: " + nome + 
-                " | Matrícula: " + matricula +
-                " | Nota1: " + nota1 +
-                " | Nota2: " + nota2 +
-                " | Média: " + calcularMedia() +
-                " | Situação" + situacao();
-        }
-        
-        public void exibirInfo(){
-            System.out.println(toString());
+//MET 2 - listar alunos
+    public void listarAlunos() {
+        for (int i = 0; i < qtde; i++) {
+            alunos[i].exibirInfo(); //chama o método que imprime as infos do aluno
         }
     }
+
+//MET 3 - retorna o aluno com a matrícula correspondente (ou null se não encontrado).
+    public Aluno buscarPorMatricula(int matricula) {
+       for (int i = 0; i < qtde; i++) {
+        if (alunos[i].getMatricula() == matricula) {
+            return alunos[i];
+        }
+       }
+       return null;
+    }
+}
