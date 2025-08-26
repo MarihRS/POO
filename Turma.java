@@ -22,19 +22,17 @@ public class Turma {
 //MET 2 - listar alunos
     public void listarAlunos() {
         for (int i = 0; i < qtde; i++) {
-            System.out.println(alunos[i]);
+            alunos[i].exibirInfo(); //chama o método que imprime as infos do aluno
         }
     }
 
 //MET 3 - retorna o aluno com a matrícula correspondente (ou null se não encontrado).
     public Aluno buscarPorMatricula(int matricula) {
-        if (this.qtde == 0) return null;
-        for (Aluno a : this.alunos) {
-            if (a.getMatricula() == matricula) { 
-            return a;
+       for (int i = 0; i < qtde; i++) {
+        if (alunos[i].getMatricula() == matricula) {
+            return alunos[i];
         }
+       }
+       return null;
     }
-        return null;
-    }
-
 }
