@@ -26,12 +26,22 @@ public class PrincipalAlunoTurma {
 
             t.adicionar(new Aluno(nome, matricula, nota1, nota2));
         }
+        //listar alunos
+        System.out.println("=== Lista de alunos ===");
+            t.listarAlunos();
 
-        t.listarAlunos();
-
+        //Busca de alunos por matrícula
+        System.out.println("=== Busca de alunos por matrícula ===")
         System.out.println("Digite a matrícula do aluno que você procura: ");
-        matricula = teclado.nextInt();
-        t.buscarPorMatricula(matricula);
+        int buscarPorMatricula = teclado.nextInt();
+        
+        Aluno encontrado = t.buscarPorMatricula(buscarPorMatricula);
+        if (encontrado != null) {
+            encontrado.exibirInfo();
+        }
+        else {
+            System.out.println("Aluno não encontrado.");
+        }
 
         teclado.close();
 
