@@ -15,7 +15,7 @@ public class Turma {
 //MET 1 - ADD ALUNO
     public boolean adicionar(Aluno a){
         if (qtde == this.alunos.length) return false; //se a turma tiver cheia, retorna false
-        this.alunos[this.qtde++] = a;
+        alunos[qtde++] = a;
         return true; //caso contrário, add o aluno na posição qtde e dps incrementa qtde
     }
 
