@@ -15,25 +15,26 @@ public class Turma {
 //MET 1 - ADD ALUNO
     public boolean adicionar(Aluno a){ //Aluno a - add um aluno
         if (qtde == this.alunos.length) return false; //se a turma tiver cheia, retorna false
-        alunos[qtde++] = a; // add o aluno na posição qtde e dps incrementa qtde p/ a próxima posição
-        return true; //retorna true caso o aluno seja add
+        alunos[qtde++] = a; 
+        return true; //caso contrário, retorna true e add o aluno na primeira posição livre do vetor
     }
 
 //MET 2 - listar alunos
-    public void listarAlunos() { //listarAlunos() - exibe todas as info de todos os alunos cadastrados na turma
-        for (int i = 0; i < qtde; i++) { //percorre o vetor alunos até qtde (só percorre os alunos cadastrados)
-            alunos[i].exibirInfo(); //chama o método de Aluno que imprime as infos do aluno
+    public void listarAlunos() {
+        for (int i = 0; i < qtde; i++) { //percorre todos os alunos cadastrados
+            alunos[i].exibirInfo(); //p/ cada aluno, imprime todas as infos chamando exibirInfo()
         }
     }
 
 //MET 3 - retorna o aluno com a matrícula correspondente (ou null se não encontrado).
-    public Aluno buscarPorMatricula(int matricula) { //procura um aluno específico usando a matrícula
-       for (int i = 0; i < qtde; i++) { //percorre o vetor até qtde
-        if (alunos[i].getMatricula() == matricula) { //compara a matrícula do aluno com a q foi passada como parâmetro
+    public Aluno buscarPorMatricula(int matricula) {
+       for (int i = 0; i < qtde; i++) { //percorre todos os alunos cadastrados
+        if (alunos[i].getMatricula() == matricula) { //p/ cada aluno, compara a matrícula do aluno com a q foi passada como parâmetro
             return alunos[i]; //se encontrar, retorna o obj Aluno correspondente
         }
        }
        return null; // se n encontrar, retorna null
     }
 }
+
 
