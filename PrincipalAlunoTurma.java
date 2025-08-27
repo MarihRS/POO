@@ -6,7 +6,7 @@ public class PrincipalAlunoTurma {
         Scanner teclado = new Scanner(System.in); 
 
 //Criando uma turma
-        Turma t = new Turma(3); //cria um obt Turma chamado t com cap. 3 alunos
+        Turma t = new Turma(3); //cria um obj Turma chamado t com cap. 3 alunos
         String nome;
         int matricula;
         double nota1;
@@ -22,7 +22,7 @@ public class PrincipalAlunoTurma {
             System.out.println("Digite a primeira nota: ");
             nota1 = teclado.nextDouble(); teclado.nextLine();
 
-            System.out.println("Digite a segundo nota: ");
+            System.out.println("Digite a segunda nota: ");
             nota2 = teclado.nextDouble(); teclado.nextLine();
 
             t.adicionar(new Aluno(nome, matricula, nota1, nota2)); //cria um novo obj Aluno com as info inseridas
@@ -49,4 +49,5 @@ public class PrincipalAlunoTurma {
 
     }
 }
+
 
