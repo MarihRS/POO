@@ -1,22 +1,24 @@
+//CLASSE
 public class Quadrado {
-    //Atributos
+
+//ATRIBUTOS
     private int lado;
 
-    //Construtor
-    public Quadrado ( int lado){
+//CONSTRUTOR
+    public Quadrado(int lado){
         this.lado = lado;
     }
 
-    //Métodos
-    public int calcularArea(){
+//MÉTODO
+    public int calcularArea(){ //int porque temos algo pra retornar
         return lado * lado;
     }
-    public int calcularperimetro(){
-        return 4 * lado;
-    }
-    public void imprimir(){                  
-        System.out.printf("lado: %d, Àrea: %d, perimetro: %d/n", lado, calcularArea(), calcularperimetro());
+
+    public int calcularPerimetro(){
+        return lado * 4;
     }
 
-
+    public void imprimir(){
+        System.out.printf("Lado: %d, Área: %d, Perímetro: %d \n", lado, calcularArea(), calcularPerimetro());
+    }
 }

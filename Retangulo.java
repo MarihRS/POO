@@ -1,23 +1,26 @@
+//CLASSE
 public class Retangulo {
-    //Atributos
-    private int Comprimento;
+
+//ATRIBUTOS
+    private int comprimento;
     private int largura;
 
-    //Construtor
-    public Retangulo ( int Comprimento, int largura){
-        this.Comprimento = Comprimento;
+//CONSTRUTOR
+    public Retangulo(int comprimento, int largura){
+        this.comprimento = comprimento;
         this.largura = largura;
     }
-    //Métodos
+
+//MÉTODO
     public int calcularArea(){
-        return Comprimento * largura;
-    }
-    public int calcularperimetro(){
-        return 2 * Comprimento + 2 * largura; 
-    }
-    public void imprimir(){                  
-        System.out.printf("Retangulo: %d, Àrea: %d, perimetro: %d/n", Comprimento, largura, calcularArea(), calcularperimetro());
+        return comprimento * largura;
     }
 
+    public int calcularPerimetro(){
+        return (2 * comprimento) + (2 * largura);
+    }
 
+    public void imprimir(){
+        System.out.printf("Comprimento: %d, Largura: %d, Área: %d, Perímetro: %d \n", comprimento, largura, calcularArea(), calcularPerimetro());
+    }
 }
