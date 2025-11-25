@@ -1,50 +1,52 @@
-//CLASSE
-public class Carro {
+public class Carro extends Veiculo {
+    private int numeroPortas;
+    private String tipoCombustivel;
+    private double potenciaMotor;
 
-//ATRIBUTOS
-    private String fabricante;
-    private String modelo;
-    private int ano;
-    private int velocidade;
-    
-//CONSTRUTOR
-    public Carro(String fabricante, String modelo, int ano){
-        this.fabricante = fabricante;
-        this.modelo = modelo;
-        this.ano = ano;
-        //não teremos a velocidade pq se não a gente dá a liberdade do carro ser construído a 100km/h, por exemplo
+    public Carro(String marca, String modelo, int ano, double precoBase, int numeroPortas, String tipoCombustivel, double potenciaMotor){
+        super(marca, modelo, ano, precoBase);
+        this.numeroPortas = numeroPortas;
+        this.tipoCombustivel = tipoCombustivel;
+        this.potenciaMotor = potenciaMotor;
     }
 
-//MÉTODO GET - ACESSADOR
-    public String getFabricante(){ //aí o atributo tem que ser com inicial maiúscula
-        return fabricante;
-    }
-    public String getModelo(){ //o () é vazio pq já indicamos o método, nesse caso, String
-        return modelo;
-    }
-    public int getAno(){
-        return ano;
-    }
-    public int getVelocidade(){
-        return velocidade;
+//MÉT. CONCRETOS
+
+    @Override //p/ indicar q estou subscrevendo um mét. da classe pai
+    public double calcularPrecoVenda(){
+        double precoVenda = getPrecoBase(); //começa com o preço base
+        if(potenciaMotor > 2.0) precoVenda += 5000; //+= atribui a uma variavel o valor dela somada ao valor de um operando
+        if(numeroPortas > 4) precoVenda += 3000;
+        return precoVenda; //retorna preço final
     }
 
-//MÉTODO SET - MODIFICADOR
-    public void setFabricante(String fabricante){ //não tem retorno
-        this.fabricante = fabricante; 
+    @Override
+    public double calcularSeguro(){
+        double seguro = getPrecoBase() * 0.03;
+        if(potenciaMotor > 2.0) seguro *= 1.5;
+        return seguro;
     }
-    public void setModelo(String modelo){
-        this.modelo = modelo;
+
+//MÉT. GET
+    public int getNumeroPortas(){
+        return numeroPortas;
     }
-    public void setAno(int ano){
-        this.ano = ano;
+    public String getTipoCombustivel(){
+        return tipoCombustivel;
     }
-    public void setVelocidade(int velocidade){
-        this.velocidade = velocidade;
+    public double getPotenciaMotor(){
+        return potenciaMotor;
     }
-    
-//MÉTODO
-    public void acelerar(){
-        velocidade = velocidade + 10;
+
+//MÉT. toString() herdado da mãe
+    @Override
+    public String toString(){
+        return "Carro - %s" +
+                "Portas: %d" + numeroPortas +
+                "Combustível: %s" + tipoCombustivel +
+                "Potência: %.1f" + potenciaMotor +
+                "Preço de Venda: %.2f" + calcularPrecoVenda() +
+                "Seguro: R$ %.2f" + calcularSeguro() +
+                super.toString();
     }
 }
