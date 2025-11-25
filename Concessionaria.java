@@ -70,4 +70,5 @@ public class Concessionaria {
     public int getQntdVeiculos(){
         return qntdVeiculos;
     }
+
 }
