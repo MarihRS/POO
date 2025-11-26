@@ -40,13 +40,9 @@ public class Carro extends Veiculo {
 
 //MÉT. toString() herdado da mãe
     @Override
-    public String toString(){
-        return "Carro - %s" +
-                "Portas: %d" + numeroPortas +
-                "Combustível: %s" + tipoCombustivel +
-                "Potência: %.1f" + potenciaMotor +
-                "Preço de Venda: %.2f" + calcularPrecoVenda() +
-                "Seguro: R$ %.2f" + calcularSeguro() +
-                super.toString();
+    public String toString() {
+        return String.format(
+                "Carro:\n%sPortas: %d\nCombustível: %s\nPotência: %.1f\nPreço de Venda: R$ %.2f\nSeguro: R$ %.2f\n",
+                super.toString(), numeroPortas, tipoCombustivel, potenciaMotor, calcularPrecoVenda(), calcularSeguro());
     }
 }
