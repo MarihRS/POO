@@ -33,10 +33,9 @@ public abstract class Veiculo {
         return precoBase;
     }
 
-    public String toString(){ //representa o obj como uma String quando imprimimos
-        return "Marca: %s\n" + marca + 
-                "Modelo: %s\n" + modelo + 
-                "Ano: %d\n" + ano + 
-                "Preço base: R$ %.2f" + precoBase;
+     @Override
+    public String toString() {
+        return String.format("Marca: %s\nModelo: %s\nAno: %d\nPreço base: R$ %.2f\n",
+                marca, modelo, ano, precoBase);
     }
 }
