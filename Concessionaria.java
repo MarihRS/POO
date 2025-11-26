@@ -10,7 +10,7 @@ public class Concessionaria {
 //MÉTODOS
 //1 - para adicionar veículo a concessionária;
     public void adicionarVeiculo(Veiculo v){
-        if(qntdVeiculos == this.veiculos.length)
+        if(qntdVeiculos < this.veiculos.length)
         veiculos[qntdVeiculos++] = v;
     }
 
@@ -33,11 +33,11 @@ public class Concessionaria {
 
 //4- para buscar um veículo pela marca na concessionária;
     public void buscarPorMarca(String marca) {
-        System.out.println("\n== Resultado da Busca ==");
+        System.out.println("\n== Resultado da Busca:\""+ marca + "\" ==");
         boolean encontrou = false;
 
         for (int i = 0; i < qntdVeiculos; i++){ 
-            if (veiculos[i].getMarca().equals(marca)) { //equals- 
+            if (veiculos[i].getMarca().equalsIgnoreCase(marca)) { //equals- 
                 System.out.println(veiculos[i].toString());
                 encontrou = true;
             }
@@ -48,11 +48,14 @@ public class Concessionaria {
     }
 
 //5- para retornar o veículo mais caro da concessionária;
-    public Veiculo veiculoMaisCaro(){
-        Veiculo maisCaro = veiculos[0]; //começa com o primeiro veículo
-        for (int i = 1; i < qntdVeiculos; i++) { //i recebe 1 pq o índice 0 já tá sendo usado como valor inicial
-            if(veiculos[i].calcularPrecoVenda() > maisCaro.calcularPrecoVenda()) {
-                maisCaro = veiculos[i]; //atualiza para esse ser o mais caro
+     public Veiculo veiculoMaisCaro() {
+        if (qntdVeiculos == 0) {
+            return null;
+        }
+        Veiculo maisCaro = veiculos[0];
+        for (int i = 1; i < qntdVeiculos; i++) {
+            if (veiculos[i].calcularPrecoVenda() > maisCaro.calcularPrecoVenda()) {
+                maisCaro = veiculos[i];
             }
         }
         return maisCaro;
@@ -70,5 +73,4 @@ public class Concessionaria {
     public int getQntdVeiculos(){
         return qntdVeiculos;
     }
-
 }
