@@ -40,12 +40,11 @@ public class Moto extends Veiculo {
     }
 
 //MÉT. toString() herdado da mãe 
-    public String toString(){
-        return "Moto - %s" +
-                "Cilindradas: %d" + cilindradas +
-                "Tipo de Partida: %s" + tipoPartida +
-                "Possui Baú? %s" + possuiBau +
-                "Preço de Venda: R$ %.2f" + calcularPrecoVenda() +
-                "Seguro: R$ %.2f" + calcularSeguro();
+    @Override
+    public String toString() {
+        return String.format(
+                "Moto:\n%sCilindradas: %d\nTipo de Partida: %s\nPossui Baú? %s\nPreço de Venda: R$ %.2f\nSeguro: R$ %.2f\n",
+                super.toString(), cilindradas, tipoPartida, (possuiBau ? "Sim" : "Não"), calcularPrecoVenda(),
+                calcularSeguro());
     }
 }
