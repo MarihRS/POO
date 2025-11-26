@@ -27,19 +27,23 @@ public class PrincipalConcessionaria {
 
 //Mostre o valor total do estoque.
     double totalEstoque = c.calcularValorTotalEstoque();
+    System.out.printf("\nValor total do estoque: R$ %.2f\n", totalEstoque);
 
 //Busque e exiba um veículo pela marca.
     c.buscarPorMarca("Mercedes");
-    c.buscarPorMarca("Ford");
-    c.buscarPorMarca("Yamaha");
 
 //Exibir o veículo mais caro.
-        Veiculo maisCaro = c.veiculoMaisCaro();
+         Veiculo maisCaro = c.veiculoMaisCaro();
         if (maisCaro != null) {
+            System.out.println("\nVeículo mais caro:");
             System.out.println(maisCaro.toString());
+        } else {
+            System.out.println("\nNenhum veículo cadastrado.");
         }
 
 //Exibir o total anual de seguro.
     double totalSeguro = c.calcularSeguroTotal();
+        System.out.printf("\nTotal anual do seguro (todos os veículos): R$ %.2f\n", totalSeguro);
+
     }
 }
