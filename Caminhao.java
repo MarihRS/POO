@@ -11,6 +11,7 @@ public class Caminhao extends Veiculo {
     }
 
 //MÉT. CONCRETOS
+    @Override
     public double calcularPrecoVenda(){
         double precoVenda = getPrecoBase();
         precoVenda += capacidadeCarga * 1000;
@@ -18,6 +19,7 @@ public class Caminhao extends Veiculo {
         return precoVenda;
     }
 
+    @Override
     public double calcularSeguro(){
         double seguro = getPrecoBase() * 1.5;
         seguro += capacidadeCarga * 500;
@@ -39,13 +41,10 @@ public class Caminhao extends Veiculo {
     }
 
 //MÉT. toString() herdado da mãe 
-    public String toString(){
-        return "Caminhão - %s" +
-                "Capacidade de Carga: %.1f toneladas" + capacidadeCarga +
-                "Número de Eixos: %d" + numeroEixos +
-                "Tipo de Carroceria: %s" + tipoCarroceria +
-                "Preço de venda: R$ %.2f" + calcularPrecoVenda() +
-                "Seguro: R$ %.2f" + calcularSeguro() +
-                super.toString();
+      @Override
+    public String toString() {
+        return String.format(
+                "Caminhão:\n%sCapacidade de Carga: %.1f toneladas\nNúmero de Eixos: %d\nTipo de Carroceria: %s\nPreço de venda: R$ %.2f\nSeguro: R$ %.2f\n",
+                super.toString(), capacidadeCarga, numeroEixos, tipoCarroceria, calcularPrecoVenda(), calcularSeguro());
     }
 }
