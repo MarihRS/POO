@@ -26,7 +26,7 @@ public class PrincipalConcessionaria {
     c.listarVeiculos();
 
 //Mostre o valor total do estoque.
-    double totalEstoque = c.calcularValorTotalEstoque();
+    double totalEstoque = c.calcularValorTotalEstoque(); //retorna calcularPrecoVenda indiretamente
     System.out.printf("\nValor total do estoque: R$ %.2f\n", totalEstoque);
 
 //Busque e exiba um veículo pela marca.
@@ -36,15 +36,16 @@ public class PrincipalConcessionaria {
          Veiculo maisCaro = c.veiculoMaisCaro();
         if (maisCaro != null) {
             System.out.println("\nVeículo mais caro:");
-            System.out.println(maisCaro.toString());
+            System.out.println(maisCaro.toString()); //chamamos implementação especifica do ts da sub de Veiculo
         } else {
             System.out.println("\nNenhum veículo cadastrado.");
         }
 
 //Exibir o total anual de seguro.
-    double totalSeguro = c.calcularSeguroTotal();
+    double totalSeguro = c.calcularSeguroTotal(); //retorna calcularSeguro indiretamente
         System.out.printf("\nTotal anual do seguro (todos os veículos): R$ %.2f\n", totalSeguro);
 
     }
 }
+
 
