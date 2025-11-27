@@ -4,7 +4,7 @@ public abstract class Veiculo {
     private int ano;
     private double precoBase;
 
-//CONSTRUTOR
+//CONSTRUTOR - é usado pelas sub. p/ inicializar os atributos herdados
     public Veiculo(String marca, String modelo, int ano, double precoBase) {
         this.marca = marca;
         this.modelo = modelo;
@@ -39,3 +39,4 @@ public abstract class Veiculo {
                 marca, modelo, ano, precoBase);
     }
 }
+
