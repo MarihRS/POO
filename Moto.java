@@ -22,7 +22,7 @@ public class Moto extends Veiculo {
     @Override
     public double calcularSeguro() {
         double seguro = getPrecoBase() * 0.02;
-        if(cilindradas > 300) seguro += 1.8; //+80%
+        if(cilindradas > 300) seguro += 0.8; //+80%
         return seguro;
     }
 
