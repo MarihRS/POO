@@ -48,7 +48,7 @@ public class Concessionaria {
     }
 
 //5- para retornar o veículo mais caro da concessionária;
-     public Veiculo veiculoMaisCaro() {
+     public Veiculo veiculoMaisCaro() { //retorna obj tipo Veiculo(carro, moto ou caminhão)
         if (qntdVeiculos == 0) {
             return null;
         }
@@ -74,6 +74,7 @@ public class Concessionaria {
         return qntdVeiculos;
     }
 }
+
 
 
 
