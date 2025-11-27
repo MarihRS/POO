@@ -11,7 +11,7 @@ public class Concessionaria {
 //1 - para adicionar veículo a concessionária;
     public void adicionarVeiculo(Veiculo v){ //add qualquer veículo
         if(qntdVeiculos < this.veiculos.length)
-        veiculos[qntdVeiculos++] = v; //
+        veiculos[qntdVeiculos++] = v; //++ adiciona a prox. posição livre e 1 ao valor atual
     }
 
 //2- para listar veículos da concessionária;
@@ -74,4 +74,5 @@ public class Concessionaria {
         return qntdVeiculos;
     }
 }
+
 
