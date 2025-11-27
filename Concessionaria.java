@@ -64,7 +64,7 @@ public class Concessionaria {
 //6- para calcular o valor total do seguro dos veículos da concessionária.
     public double calcularSeguroTotal() {
         double totalSeguro = 0;
-        for(int i = 0; i < qntdVeiculos; i++) { //soma de todos os vetores
+        for(int i = 0; i < qntdVeiculos; i++) { //soma de todos os calcularSeguro
             totalSeguro += veiculos[i].calcularSeguro(); //retornando diferentes formas calcularSeguro das dif. sub
         }
         return totalSeguro;
@@ -74,5 +74,6 @@ public class Concessionaria {
         return qntdVeiculos;
     }
 }
+
 
 
