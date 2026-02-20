@@ -7,15 +7,10 @@ public class CadastrarCliente {
         this.clientes = new Cliente[qtde];
     }
 
-    public boolean adicionar(Cliente c){
-        if(qtde == this.clientes.length) return false;
-        clientes[qtde++] = c;
-        return true;
-    }
-
     public void listarClientes(){
         for (int i = 0; i < qtde; i++){
             clientes[i].exibirInfo();
         }
     }
+
 }
